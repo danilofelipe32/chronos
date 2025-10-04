@@ -6,12 +6,14 @@ import Footer from './components/Footer';
 import { COLLECTIONS } from './constants';
 import type { Watch, Collection } from './types';
 import Modal from './components/Modal';
+import PasswordModal from './components/PasswordModal';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const App: React.FC = () => {
   const [collections, setCollections] = useState<Collection[]>(COLLECTIONS);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [editingWatch, setEditingWatch] = useState<Watch | null>(null);
+  const [passwordRequest, setPasswordRequest] = useState<Watch | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>('All');
 
   const handleUpdateWatch = (updatedWatch: Watch) => {
@@ -26,12 +28,18 @@ const App: React.FC = () => {
   };
 
   const handleEditRequest = (watch: Watch) => {
-    const password = prompt("Por favor, insira a senha para editar:");
-    if (password === "29101980") {
-      setEditingWatch(watch);
-    } else if (password !== null) { // User didn't click cancel
-      alert("Senha incorreta.");
+    setPasswordRequest(watch);
+  };
+  
+  const handlePasswordCheck = (password: string): boolean => {
+    if (password === '29101980') {
+      if (passwordRequest) {
+        setEditingWatch(passwordRequest);
+      }
+      setPasswordRequest(null);
+      return true;
     }
+    return false;
   };
 
   const collectionNames = COLLECTIONS.map(c => c.name);
@@ -90,6 +98,12 @@ const App: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <PasswordModal
+        isOpen={!!passwordRequest}
+        onClose={() => setPasswordRequest(null)}
+        onCheckPassword={handlePasswordCheck}
+      />
 
       <Modal isOpen={!!editingWatch} onClose={() => setEditingWatch(null)}>
         {editingWatch && (
