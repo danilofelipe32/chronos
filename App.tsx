@@ -57,6 +57,17 @@ const App: React.FC = () => {
     setIsAddingWatch(false);
   };
 
+  const handleDeleteWatch = (watchIdToDelete: number) => {
+    if (window.confirm('Tem certeza de que deseja excluir este relógio? Esta ação não pode ser desfeita.')) {
+        const newCollections = collections.map(collection => ({
+            ...collection,
+            watches: collection.watches.filter(w => w.id !== watchIdToDelete)
+        }));
+        setCollections(newCollections);
+        setEditingWatch(null);
+    }
+  };
+
   const handleEditRequest = (watch: Watch, collectionName: string) => {
     setPasswordRequest({ watch, collectionName });
   };
@@ -164,6 +175,7 @@ const App: React.FC = () => {
             allCollectionNames={collectionNames}
             onSave={handleUpdateWatch}
             onCancel={() => setEditingWatch(null)}
+            onDelete={handleDeleteWatch}
           />
         )}
       </Modal>
@@ -285,9 +297,10 @@ interface EditWatchFormProps {
   allCollectionNames: string[];
   onSave: (watch: Watch, collectionName: string) => void;
   onCancel: () => void;
+  onDelete: (watchId: number) => void;
 }
 
-const EditWatchForm: React.FC<EditWatchFormProps> = ({ watch, currentCollectionName, allCollectionNames, onSave, onCancel }) => {
+const EditWatchForm: React.FC<EditWatchFormProps> = ({ watch, currentCollectionName, allCollectionNames, onSave, onCancel, onDelete }) => {
   const [formData, setFormData] = useState({ ...watch, collectionName: currentCollectionName });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -369,9 +382,21 @@ const EditWatchForm: React.FC<EditWatchFormProps> = ({ watch, currentCollectionN
           ></textarea>
         </div>
       </div>
-      <div className="mt-6 flex justify-end space-x-4">
-        <button type="button" onClick={onCancel} className="px-4 py-2 rounded-md text-gray-300 hover:bg-brand-dark/50 transition-colors">Cancelar</button>
-        <button type="submit" className="px-4 py-2 rounded-md bg-brand-gold text-brand-dark font-bold hover:bg-yellow-500 transition-colors">Salvar</button>
+      <div className="mt-6 flex justify-between items-center">
+        <button
+          type="button"
+          onClick={() => onDelete(watch.id)}
+          className="p-2 rounded-md text-red-500 hover:bg-red-500/10 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-gray focus:ring-red-500"
+          aria-label="Deletar relógio"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+          </svg>
+        </button>
+        <div className="space-x-4">
+          <button type="button" onClick={onCancel} className="px-4 py-2 rounded-md text-gray-300 hover:bg-brand-dark/50 transition-colors">Cancelar</button>
+          <button type="submit" className="px-4 py-2 rounded-md bg-brand-gold text-brand-dark font-bold hover:bg-yellow-500 transition-colors">Salvar</button>
+        </div>
       </div>
     </form>
   )
