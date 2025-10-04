@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
       <motion.div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
         style={{ 
-          backgroundImage: "url('https://picsum.photos/id/122/1920/1080')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1614705628422-9b37861b3f23?q=80&w=1974&auto=format&fit=crop')",
           y
         }} 
       />

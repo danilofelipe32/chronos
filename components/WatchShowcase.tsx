@@ -102,7 +102,7 @@ const WatchShowcase: React.FC<WatchShowcaseProps> = ({
           ))}
           <button
             onClick={onAddWatchRequest}
-            className="px-4 py-2 text-sm font-medium rounded-full transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-dark focus:ring-brand-gold bg-brand-gray text-brand-gold hover:bg-brand-gold hover:text-brand-dark ml-2 md:ml-4"
+            className="px-4 py-2 text-sm font-medium rounded-full transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-dark focus:ring-brand-gold bg-transparent border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark ml-2 md:ml-4"
             aria-label="Adicionar novo relógio"
           >
             Adicionar Relógio +
