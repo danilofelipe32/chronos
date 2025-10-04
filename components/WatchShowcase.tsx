@@ -7,6 +7,7 @@ interface WatchShowcaseProps {
   collections: Collection[];
   onSelectImage: (imageUrl: string) => void;
   onEditWatch: (watch: Watch, collectionName: string) => void;
+  onAddWatchRequest: () => void;
   collectionNames: string[];
   activeFilter: string;
   onFilterChange: (filter: string) => void;
@@ -70,6 +71,7 @@ const WatchShowcase: React.FC<WatchShowcaseProps> = ({
   collections,
   onSelectImage,
   onEditWatch,
+  onAddWatchRequest,
   collectionNames,
   activeFilter,
   onFilterChange
@@ -80,7 +82,7 @@ const WatchShowcase: React.FC<WatchShowcaseProps> = ({
     <section id="collection" className="py-20 bg-brand-dark overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
-          className="flex flex-wrap justify-center gap-2 md:gap-4 mb-16"
+          className="flex flex-wrap items-center justify-center gap-2 md:gap-4 mb-16"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -98,6 +100,13 @@ const WatchShowcase: React.FC<WatchShowcaseProps> = ({
               {filter}
             </button>
           ))}
+          <button
+            onClick={onAddWatchRequest}
+            className="px-4 py-2 text-sm font-medium rounded-full transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-dark focus:ring-brand-gold bg-brand-gray text-brand-gold hover:bg-brand-gold hover:text-brand-dark ml-2 md:ml-4"
+            aria-label="Adicionar novo relógio"
+          >
+            Adicionar Relógio +
+          </button>
         </motion.div>
 
         {collections.map((collection) => (
