@@ -1,47 +1,229 @@
+import type { Collection } from './types';
 
-import type { Watch } from './types';
-
-export const WATCHES: Watch[] = [
+export const COLLECTIONS: Collection[] = [
   {
-    id: 1,
-    name: "Chronomaster Eclipse",
-    tagline: "Engenharia Celestial no seu Pulso.",
-    description: "Inspirado na mecânica celeste, o Eclipse apresenta um mostrador de fases da lua de precisão e uma caixa de titânio escovado que evoca a escuridão do espaço.",
-    imageUrl: "https://picsum.photos/id/10/800/1000",
+    name: "Mechanica Art",
+    description: "Uma celebração da complexidade mecânica, onde a beleza da engrenagem é a protagonista. Cada peça expõe sua alma, um balé de precisão visível a olho nu.",
+    watches: [
+      {
+        id: 1,
+        name: "Aurum Skeleton",
+        tagline: "O coração de ouro da relojoaria.",
+        description: "Uma sinfonia de engrenagens e ouro, onde cada tique-taque é uma exibição de arte mecânica. O mostrador esqueletizado revela a complexa alma do tempo.",
+        imageUrl: "https://i.imgur.com/oM6Y9xq.png",
+      },
+      {
+        id: 3,
+        name: "Aethelred Gearwork",
+        tagline: "Forjado em bronze e engenho.",
+        description: "Forjado em bronze e engenhosidade, seu coração exposto bate com o pulso da era industrial. Uma peça robusta que homenageia os mestres do metal.",
+        imageUrl: "https://i.imgur.com/ht8Jorh.png",
+      },
+      {
+        id: 8,
+        name: "Sol Invictus Tourbillon",
+        tagline: "A gravidade dança ao seu comando.",
+        description: "Um sol dourado em seu pulso, seu turbilhão é um lembrete constante do poder e da beleza da precisão mecânica, desafiando a própria gravidade.",
+        imageUrl: "https://i.imgur.com/Fcr3oEq.png",
+      },
+      {
+        id: 12,
+        name: "Baroque Ornata",
+        tagline: "Esculpido à mão, nascido do tempo.",
+        description: "Mais do que um relógio, é uma obra-prima da gravação barroca. Uma escultura vestível de detalhes intrincados que conta histórias em seus metais.",
+        imageUrl: "https://i.imgur.com/UUPWPt8.png",
+      },
+      {
+        id: 22,
+        name: "Cryptex Skeleton",
+        tagline: "Desvendando os segredos do tempo.",
+        description: "Destravando os segredos do tempo, o Cryptex revela seu intrincado funcionamento interno em uma dança de aço e azul safira, para o decifrador moderno.",
+        imageUrl: "https://i.imgur.com/5BTkocV.png",
+      },
+    ],
   },
   {
-    id: 2,
-    name: "Quantum Regulator",
-    tagline: "Minimalismo Encontra o Futuro.",
-    description: "Com um design arrojado e limpo, o Quantum Regulator utiliza um movimento de quartzo de alta frequência para uma precisão inigualável. Sua simplicidade é sua maior sofisticação.",
-    imageUrl: "https://picsum.photos/id/35/800/1000",
+    name: "Quantum",
+    description: "Designs vanguardistas que definem o amanhã. O minimalismo encontra a tecnologia em peças que são tanto declarações de estilo quanto instrumentos de precisão.",
+    watches: [
+       {
+        id: 2,
+        name: "Stellaris Chrono",
+        tagline: "Precisão para o pioneiro moderno.",
+        description: "Linhas limpas e um mostrador azul profundo evocam a vastidão do espaço. Utiliza um movimento de quartzo de alta frequência para uma precisão inigualável.",
+        imageUrl: "https://i.imgur.com/df4VNKW.png",
+      },
+      {
+        id: 5,
+        name: "Nyx Phantom",
+        tagline: "A sofisticação da escuridão.",
+        description: "Tão escuro e silencioso quanto a noite, o Nyx Phantom é o epítome da sofisticação moderna e discreta. Um relógio que se faz notar pela sua ausência de cor.",
+        imageUrl: "https://i.imgur.com/k9fd2KI.png",
+      },
+      {
+        id: 7,
+        name: "Argento Minimalist",
+        tagline: "A essência da forma e função.",
+        description: "A pura expressão de 'menos é mais'. Um mostrador prateado e descomplicado, com ponteiros azuis elétricos, para o minimalista que aprecia a clareza.",
+        imageUrl: "https://i.imgur.com/lrG4ApH.png",
+      },
+      {
+        id: 20,
+        name: "Aura Minimal",
+        tagline: "O calor do ouro, a frieza do minimalismo.",
+        description: "Puro e simples. O brilho quente da caixa de ouro contrasta lindamente com o mostrador preto, minimalista e austero, criando um equilíbrio perfeito.",
+        imageUrl: "https://i.imgur.com/QvKxlxJ.png",
+      },
+      {
+        id: 26,
+        name: "Nexus 7",
+        tagline: "O tempo, reimaginado.",
+        description: "O Nexus 7 rompe com a tradição, apresentando uma exibição revolucionária para o pensador progressista. Uma peça que questiona a própria natureza do tempo.",
+        imageUrl: "https://i.imgur.com/dqh8jbV.png",
+      },
+    ],
   },
   {
-    id: 3,
-    name: "Aetheria Tourbillon",
-    tagline: "A Alma da Alta Relojoaria.",
-    description: "Uma obra-prima da complicação mecânica. O Aetheria revela seu turbilhão hipnotizante através de um mostrador de safira, uma dança de precisão e arte.",
-    imageUrl: "https://picsum.photos/id/56/800/1000",
+    name: "Classique",
+    description: "A elegância atemporal que transcende modas. Inspirados na rica herança da alta relojoaria, estes relógios são um tributo à tradição, ao requinte e à durabilidade.",
+    watches: [
+      {
+        id: 4,
+        name: "Imperator Legacy",
+        tagline: "O legado dos impérios no seu pulso.",
+        description: "Ecoando a grandeza dos antigos impérios, o Imperator, com seus numerais romanos e pulseira de couro, é um testemunho do design atemporal e do legado duradouro.",
+        imageUrl: "https://i.imgur.com/QkchTZC.png",
+      },
+      {
+        id: 9,
+        name: "Senator Classic",
+        tagline: "Elegância despretensiosa para todas as ocasiões.",
+        description: "Um companheiro confiável que fala volumes em sua simplicidade. Seu design clássico com mostrador branco e ponteiros azuis é a definição de versatilidade.",
+        imageUrl: "https://i.imgur.com/TlHNyOM.png",
+      },
+      {
+        id: 15,
+        name: "Regent Viridian",
+        tagline: "Onde o ouro encontra a floresta.",
+        description: "O verde profundo da floresta encontra o brilho do ouro. Um design clássico com uma cor arrojada e contemporânea, para quem não tem medo de se destacar.",
+        imageUrl: "https://i.imgur.com/KxJt2TQ.png",
+      },
+      {
+        id: 21,
+        name: "Carré Classique",
+        tagline: "Geometria atemporal, elegância icônica.",
+        description: "Um ícone de geometria atemporal. A caixa quadrada desafia a convenção enquanto mantém os mais altos padrões da elegância clássica. Para quem ousa ser diferente.",
+        imageUrl: "https://i.imgur.com/VPgSCc2.png",
+      },
+       {
+        id: 25,
+        name: "Heirloom Pocket Watch",
+        tagline: "Um tesouro para gerações.",
+        description: "Uma homenagem à era de ouro da relojoaria. Este relógio de bolso ornamentado é um tesouro para ser passado de geração em geração, guardando memórias preciosas.",
+        imageUrl: "https://i.imgur.com/kwHuOK6.png",
+      },
+    ]
   },
   {
-    id: 4,
-    name: "Maritime Deep Dive",
-    tagline: "Conquiste as Profundezas com Estilo.",
-    description: "Projetado para o explorador moderno, o Maritime é resistente à água até 1000m. Sua luneta de cerâmica e marcadores luminescentes garantem legibilidade em qualquer condição.",
-    imageUrl: "https://picsum.photos/id/117/800/1000",
+    name: "Celestial",
+    description: "Peças inspiradas na complexa dança dos corpos celestes. De fases da lua a mapas estelares, cada relógio é um observatório de pulso.",
+    watches: [
+      {
+        id: 6,
+        name: "Celestial Tourbillon",
+        tagline: "Um universo de precisão.",
+        description: "Um turbilhão cativante dança contra um mapa celestial, um universo de precisão em seu pulso que torna a observação das horas uma experiência cósmica.",
+        imageUrl: "https://i.imgur.com/gE4kwN6.png",
+      },
+      {
+        id: 14,
+        name: "Geo-Scalar Worldtimer",
+        tagline: "O mundo ao seu alcance.",
+        description: "O mundo na ponta dos seus dedos. Monitore múltiplos fusos horários com um mostrador que é um tributo à exploração global e às viagens.",
+        imageUrl: "https://i.imgur.com/dMfZjMh.png",
+      },
+      {
+        id: 17,
+        name: "Lunar Phase Master",
+        tagline: "Siga o ritmo da lua.",
+        description: "Siga o ritmo da lua com uma complicação de fase lunar de precisão impressionante, situada em um mostrador que imita um céu noturno estrelado.",
+        imageUrl: "https://i.imgur.com/2GnaL7m.png",
+      },
+    ]
   },
   {
-    id: 5,
-    name: "Apex Chronograph",
-    tagline: "Precisão em Alta Velocidade.",
-    description: "O cronógrafo definitivo para entusiastas de automobilismo. Construído com fibra de carbono e aço cirúrgico, o Apex é leve, resistente e incrivelmente preciso.",
-    imageUrl: "https://picsum.photos/id/180/800/1000",
+    name: "Apex",
+    description: "Instrumentos de alta performance construídos para velocidade, aventura e precisão intransigente. Leves, robustos e prontos para qualquer desafio.",
+    watches: [
+      {
+        id: 10,
+        name: "Veloce Chronograph",
+        tagline: "A velocidade tem um novo mestre.",
+        description: "Construído para velocidade e precisão. O Veloce, com seus detalhes em vermelho vibrante, é o instrumento definitivo para cronometrar os momentos mais críticos da vida.",
+        imageUrl: "https://i.imgur.com/66utzGQ.png",
+      },
+      {
+        id: 11,
+        name: "Stealth Operator",
+        tagline: "Engenharia para o extremo.",
+        description: "Projetado para o extremo. Um relógio-ferramenta robusto com precisão tática para qualquer missão, combinando funções analógicas e digitais.",
+        imageUrl: "https://i.imgur.com/PsbZ8Tj.png",
+      },
+      {
+        id: 18,
+        name: "Triton Deep Dive 300M",
+        tagline: "Conquiste a pressão das profundezas.",
+        description: "Construído para conquistar a pressão das profundezas. Um relógio de mergulho de nível profissional com confiabilidade inabalável e legibilidade superior.",
+        imageUrl: "https://i.imgur.com/Q3ctqgT.png",
+      },
+      {
+        id: 23,
+        name: "Ignition Chronograph",
+        tagline: "O copiloto do piloto exigente.",
+        description: "O calor do ouro rosa encontra o desempenho de um cronógrafo de alta precisão. A combinação perfeita de luxo e funcionalidade para os entusiastas de corridas.",
+        imageUrl: "https://i.imgur.com/aR1yThX.png",
+      },
+      {
+        id: 27,
+        name: "Pathfinder Field Compass",
+        tagline: "Sua bússola para a aventura.",
+        description: "Sua ferramenta essencial para a aventura. Um relógio de campo robusto, equipado com uma bússola confiável para sempre guiá-lo no caminho certo.",
+        imageUrl: "https://i.imgur.com/1DHu8ui.png",
+      }
+    ]
   },
   {
-    id: 6,
-    name: "Geo-Scalar Worldtimer",
-    tagline: "O Mundo no Seu Pulso.",
-    description: "Para o viajante global, o Geo-Scalar exibe 24 fusos horários simultaneamente. Seu mostrador gravado com o mapa-múndi é um testemunho da sua vocação cosmopolita.",
-    imageUrl: "https://picsum.photos/id/211/800/1000",
-  },
+    name: "Terra",
+    description: "Uma fusão única de materiais orgânicos e design relojoeiro. Cada peça, feita de madeira e pedra, conecta quem a usa à essência da terra e do tempo.",
+    watches: [
+      {
+        id: 13,
+        name: "Sylva Arbor",
+        tagline: "O grão único da natureza.",
+        description: "Feito de madeira de Zebrano sustentável, o Sylva traz um toque do grão único da natureza para o seu pulso. Uma peça leve, única e ecológica.",
+        imageUrl: "https://i.imgur.com/n4LlAX7.png",
+      },
+      {
+        id: 16,
+        name: "Umbra Lignum",
+        tagline: "O calor tátil da madeira nobre.",
+        description: "Esculpido em nogueira rica, o Umbra é uma experiência quente e tátil, conectando você à essência do tempo e da natureza de forma profunda.",
+        imageUrl: "https://i.imgur.com/eJNtvlb.png",
+      },
+      {
+        id: 19,
+        name: "Quercus Chrono",
+        tagline: "Leveza e resiliência natural.",
+        description: "A madeira de bordo, leve e resiliente, forma o corpo deste cronógrafo único, combinando uma estética natural com um design funcional.",
+        imageUrl: "https://i.imgur.com/1JwE4zT.png",
+      },
+      {
+        id: 24,
+        name: "Petra Marblewood",
+        tagline: "A história da Terra no seu pulso.",
+        description: "Uma fusão de madeira terrosa e mármore frio e sólido. Cada mostrador é uma fatia única da história da Terra, tornando cada relógio irrepetível.",
+        imageUrl: "https://i.imgur.com/10UHLn1.png",
+      },
+    ]
+  }
 ];

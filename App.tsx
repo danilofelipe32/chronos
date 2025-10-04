@@ -1,10 +1,9 @@
-
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import WatchShowcase from './components/WatchShowcase';
 import Footer from './components/Footer';
-import { WATCHES } from './constants';
+import { COLLECTIONS } from './constants';
 
 const App: React.FC = () => {
   return (
@@ -12,7 +11,7 @@ const App: React.FC = () => {
       <Header />
       <main>
         <Hero />
-        <WatchShowcase watches={WATCHES} />
+        <WatchShowcase collections={COLLECTIONS} />
       </main>
       <Footer />
     </div>
