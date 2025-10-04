@@ -109,6 +109,13 @@ export const COLLECTIONS: Collection[] = [
         description: "Forjado a partir de materiais desconhecidos, o Stellaron Core não mede o tempo, ele o dobra. Seu design alienígena e núcleo de energia pulsante são para aqueles que existem além do continuum.",
         imageUrl: "https://i.imgur.com/5OrrXqK.png",
       },
+      {
+        id: 38,
+        name: "Aegis Construct",
+        tagline: "A fortaleza do tempo no seu pulso.",
+        description: "O Aegis Construct é menos um relógio e mais uma fortaleza de tempo. Sua arquitetura complexa de titânio entrelaçado e seu núcleo de energia azul pulsante não apenas exibem as horas, mas as protegem, tornando-o uma peça para o arquiteto do futuro.",
+        imageUrl: "https://i.imgur.com/H6NBU0U.png",
+      },
     ],
   },
   {
