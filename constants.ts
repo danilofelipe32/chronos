@@ -81,6 +81,13 @@ export const COLLECTIONS: Collection[] = [
         description: "O Nexus 7 rompe com a tradição, apresentando uma exibição revolucionária para o pensador progressista. Uma peça que questiona a própria natureza do tempo.",
         imageUrl: "https://i.imgur.com/dqh8jbV.png",
       },
+      {
+        id: 29,
+        name: "Singularidade Quântica",
+        tagline: "Onde o tempo se curva.",
+        description: "Um vislumbre do futuro no seu pulso. A Singularidade Quântica usa um mostrador de cristal líquido para exibir o tempo de uma forma totalmente nova, desafiando a percepção linear.",
+        imageUrl: "https://i.imgur.com/8z21e7d.png",
+      },
     ],
   },
   {
