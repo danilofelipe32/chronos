@@ -224,6 +224,13 @@ export const COLLECTIONS: Collection[] = [
         description: "Uma fusão de madeira terrosa e mármore frio e sólido. Cada mostrador é uma fatia única da história da Terra, tornando cada relógio irrepetível.",
         imageUrl: "https://i.imgur.com/10UHLn1.png",
       },
+      {
+        id: 28,
+        name: "Ébano Minimalista",
+        tagline: "A simplicidade esculpida pela natureza.",
+        description: "A fusão do ébano profundo com um design minimalista. Este relógio é uma declaração silenciosa e poderosa, onde a simplicidade da forma realça a beleza complexa da madeira.",
+        imageUrl: "https://i.imgur.com/JTKBxZV.png",
+      },
     ]
   }
 ];

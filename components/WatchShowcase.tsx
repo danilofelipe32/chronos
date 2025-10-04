@@ -6,7 +6,7 @@ import WatchCard from './WatchCard';
 interface WatchShowcaseProps {
   collections: Collection[];
   onSelectImage: (imageUrl: string) => void;
-  onEditWatch: (watch: Watch) => void;
+  onEditWatch: (watch: Watch, collectionName: string) => void;
   collectionNames: string[];
   activeFilter: string;
   onFilterChange: (filter: string) => void;
@@ -25,7 +25,7 @@ const containerVariants = {
 interface CollectionSectionProps {
   collection: Collection;
   onSelectImage: (imageUrl: string) => void;
-  onEditWatch: (watch: Watch) => void;
+  onEditWatch: (watch: Watch, collectionName: string) => void;
 }
 
 const CollectionSection: React.FC<CollectionSectionProps> = ({ collection, onSelectImage, onEditWatch }) => {
@@ -56,6 +56,7 @@ const CollectionSection: React.FC<CollectionSectionProps> = ({ collection, onSel
           <WatchCard
             key={watch.id}
             watch={watch}
+            collectionName={collection.name}
             onSelectImage={onSelectImage}
             onEditWatch={onEditWatch}
           />

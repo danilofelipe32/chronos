@@ -13,23 +13,32 @@ import { motion, AnimatePresence } from 'framer-motion';
 const App: React.FC = () => {
   const [collections, setCollections] = useState<Collection[]>(COLLECTIONS);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [editingWatch, setEditingWatch] = useState<Watch | null>(null);
-  const [passwordRequest, setPasswordRequest] = useState<Watch | null>(null);
+  const [editingWatch, setEditingWatch] = useState<{ watch: Watch; collectionName: string } | null>(null);
+  const [passwordRequest, setPasswordRequest] = useState<{ watch: Watch; collectionName: string } | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>('All');
 
-  const handleUpdateWatch = (updatedWatch: Watch) => {
-    const newCollections = collections.map(collection => ({
-      ...collection,
-      watches: collection.watches.map(watch =>
-        watch.id === updatedWatch.id ? updatedWatch : watch
-      ),
-    }));
+  const handleUpdateWatch = (updatedWatch: Watch, newCollectionName: string) => {
+    const newCollections = collections.map(collection => {
+      // Remove o relógio de qualquer coleção em que possa estar (lida com a movimentação)
+      const watches = collection.watches.filter(w => w.id !== updatedWatch.id);
+      
+      // Se esta for a nova coleção de destino, adicione o relógio atualizado
+      if (collection.name === newCollectionName) {
+        // Ordenar por ID para manter a ordem consistente
+        const newWatches = [...watches, updatedWatch].sort((a, b) => a.id - b.id);
+        return { ...collection, watches: newWatches };
+      }
+      
+      // Caso contrário, apenas retorne a coleção com o relógio removido (se ele estava lá)
+      return { ...collection, watches };
+    });
+    
     setCollections(newCollections);
     setEditingWatch(null);
   };
 
-  const handleEditRequest = (watch: Watch) => {
-    setPasswordRequest(watch);
+  const handleEditRequest = (watch: Watch, collectionName: string) => {
+    setPasswordRequest({ watch, collectionName });
   };
   
   const handlePasswordCheck = (password: string): boolean => {
@@ -110,7 +119,9 @@ const App: React.FC = () => {
       <Modal isOpen={!!editingWatch} onClose={() => setEditingWatch(null)}>
         {editingWatch && (
           <EditWatchForm
-            watch={editingWatch}
+            watch={editingWatch.watch}
+            currentCollectionName={editingWatch.collectionName}
+            allCollectionNames={collectionNames}
             onSave={handleUpdateWatch}
             onCancel={() => setEditingWatch(null)}
           />
@@ -122,21 +133,24 @@ const App: React.FC = () => {
 
 interface EditWatchFormProps {
   watch: Watch;
-  onSave: (watch: Watch) => void;
+  currentCollectionName: string;
+  allCollectionNames: string[];
+  onSave: (watch: Watch, collectionName: string) => void;
   onCancel: () => void;
 }
 
-const EditWatchForm: React.FC<EditWatchFormProps> = ({ watch, onSave, onCancel }) => {
-  const [formData, setFormData] = useState(watch);
+const EditWatchForm: React.FC<EditWatchFormProps> = ({ watch, currentCollectionName, allCollectionNames, onSave, onCancel }) => {
+  const [formData, setFormData] = useState({ ...watch, collectionName: currentCollectionName });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSave(formData);
+    const { collectionName, ...watchData } = formData;
+    onSave(watchData as Watch, collectionName);
   };
 
   return (
@@ -166,6 +180,33 @@ const EditWatchForm: React.FC<EditWatchFormProps> = ({ watch, onSave, onCancel }
             className="w-full bg-brand-dark border border-brand-gray text-white rounded-md p-2 focus:ring-brand-gold focus:border-brand-gold transition-colors"
             aria-label="Watch Name"
           />
+        </div>
+        <div>
+          <label htmlFor="tagline" className="block text-sm font-medium text-gray-300 mb-1">Slogan</label>
+          <input
+            type="text"
+            id="tagline"
+            name="tagline"
+            value={formData.tagline}
+            onChange={handleChange}
+            className="w-full bg-brand-dark border border-brand-gray text-white rounded-md p-2 focus:ring-brand-gold focus:border-brand-gold transition-colors"
+            aria-label="Tagline"
+          />
+        </div>
+         <div>
+          <label htmlFor="collectionName" className="block text-sm font-medium text-gray-300 mb-1">Coleção</label>
+          <select
+            id="collectionName"
+            name="collectionName"
+            value={formData.collectionName}
+            onChange={handleChange}
+            className="w-full bg-brand-dark border border-brand-gray text-white rounded-md p-2 focus:ring-brand-gold focus:border-brand-gold transition-colors"
+            aria-label="Collection"
+          >
+            {allCollectionNames.map(name => (
+              <option key={name} value={name}>{name}</option>
+            ))}
+          </select>
         </div>
         <div>
           <label htmlFor="description" className="block text-sm font-medium text-gray-300 mb-1">Descrição</label>

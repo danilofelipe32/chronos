@@ -4,8 +4,9 @@ import type { Watch } from '../types';
 
 interface WatchCardProps {
   watch: Watch;
+  collectionName: string;
   onSelectImage: (imageUrl: string) => void;
-  onEditWatch: (watch: Watch) => void;
+  onEditWatch: (watch: Watch, collectionName: string) => void;
 }
 
 const cardVariants = {
@@ -28,7 +29,7 @@ const EditIcon = () => (
 );
 
 
-const WatchCard: React.FC<WatchCardProps> = ({ watch, onSelectImage, onEditWatch }) => {
+const WatchCard: React.FC<WatchCardProps> = ({ watch, collectionName, onSelectImage, onEditWatch }) => {
   return (
     <motion.div
       className="bg-brand-gray rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl hover:shadow-brand-gold/10 flex flex-col"
@@ -55,7 +56,7 @@ const WatchCard: React.FC<WatchCardProps> = ({ watch, onSelectImage, onEditWatch
           <p className="text-gray-400 text-sm leading-relaxed">{watch.description}</p>
         </div>
          <button
-            onClick={() => onEditWatch(watch)}
+            onClick={() => onEditWatch(watch, collectionName)}
             className="absolute top-4 right-4 p-2 rounded-full bg-brand-dark/50 text-brand-light/70 hover:bg-brand-gold hover:text-brand-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-gray focus:ring-brand-gold transition-all duration-300 opacity-0 group-hover:opacity-100"
             aria-label={`Edit ${watch.name}`}
           >
