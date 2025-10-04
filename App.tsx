@@ -25,6 +25,15 @@ const App: React.FC = () => {
     setEditingWatch(null);
   };
 
+  const handleEditRequest = (watch: Watch) => {
+    const password = prompt("Por favor, insira a senha para editar:");
+    if (password === "29101980") {
+      setEditingWatch(watch);
+    } else if (password !== null) { // User didn't click cancel
+      alert("Senha incorreta.");
+    }
+  };
+
   const collectionNames = COLLECTIONS.map(c => c.name);
   const filteredCollections = activeFilter === 'All'
     ? collections
@@ -38,7 +47,7 @@ const App: React.FC = () => {
         <WatchShowcase
           collections={filteredCollections}
           onSelectImage={setSelectedImage}
-          onEditWatch={setEditingWatch}
+          onEditWatch={handleEditRequest}
           collectionNames={collectionNames}
           activeFilter={activeFilter}
           onFilterChange={setActiveFilter}
