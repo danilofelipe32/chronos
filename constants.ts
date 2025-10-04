@@ -95,6 +95,20 @@ export const COLLECTIONS: Collection[] = [
         description: "O Axiom Blue combina um acabamento preto fosco furtivo com detalhes em azul vibrante, criando uma declaração ousada. Seu movimento de cronógrafo avançado oferece precisão impecável para o explorador urbano moderno.",
         imageUrl: "https://i.imgur.com/ec9VMWt.png",
       },
+      {
+        id: 34,
+        name: "Vektor Segment",
+        tagline: "O tempo em fragmentos digitais.",
+        description: "O Vektor Segment desconstrói o tempo em fragmentos digitais. Sua exibição única e design arrojado são para o indivíduo que não apenas segue o futuro, mas o define.",
+        imageUrl: "https://i.imgur.com/25jPU2n.png",
+      },
+      {
+        id: 36,
+        name: "Stellaron Core",
+        tagline: "A singularidade no seu pulso.",
+        description: "Forjado a partir de materiais desconhecidos, o Stellaron Core não mede o tempo, ele o dobra. Seu design alienígena e núcleo de energia pulsante são para aqueles que existem além do continuum.",
+        imageUrl: "https://i.imgur.com/5OrrXqK.png",
+      },
     ],
   },
   {
@@ -149,6 +163,13 @@ export const COLLECTIONS: Collection[] = [
         tagline: "Uma obra-prima da relojoaria clássica.",
         description: "O Opus Magnum é um tributo à era de ouro da relojoaria. Com seu mostrador intricadamente detalhado, numerais romanos clássicos e uma caixa de ouro polido, ele representa o auge do artesanato tradicional e do estilo atemporal.",
         imageUrl: "https://i.imgur.com/9YrO4kU.png",
+      },
+      {
+        id: 35,
+        name: "Legatum Pocket Watch",
+        tagline: "O tempo em sua forma mais nobre.",
+        description: "Uma obra-prima de bolso que evoca a elegância de eras passadas. O Legatum é uma peça de herança, com gravação manual e um movimento mecânico que é tanto uma maravilha técnica quanto uma obra de arte.",
+        imageUrl: "https://i.imgur.com/jaswAIY.png",
       },
     ]
   },
@@ -217,6 +238,13 @@ export const COLLECTIONS: Collection[] = [
         tagline: "Sua bússola para a aventura.",
         description: "Sua ferramenta essencial para a aventura. Um relógio de campo robusto, equipado com uma bússola confiável para sempre guiá-lo no caminho certo.",
         imageUrl: "https://i.imgur.com/1DHu8ui.png",
+      },
+      {
+        id: 37,
+        name: "Ignition GT",
+        tagline: "Nascido na pista, projetado para a vitória.",
+        description: "O Ignition GT é uma máquina de precisão. Com seu mostrador de fibra de carbono e detalhes em laranja de alta visibilidade, ele foi construído para o entusiasta de corridas que exige desempenho e estilo em cada segundo.",
+        imageUrl: "https://i.imgur.com/FZb38fK.png",
       }
     ]
   },
