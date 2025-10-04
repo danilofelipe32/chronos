@@ -88,6 +88,13 @@ export const COLLECTIONS: Collection[] = [
         description: "O Chronoframe Azure desafia as convenções com sua caixa angular e detalhes em azul elétrico. Uma peça para o visionário que vive na vanguarda da tecnologia e do estilo.",
         imageUrl: "https://i.imgur.com/NUhePON.png",
       },
+      {
+        id: 32,
+        name: "Axiom Blue",
+        tagline: "O ritmo do futuro no seu pulso.",
+        description: "O Axiom Blue combina um acabamento preto fosco furtivo com detalhes em azul vibrante, criando uma declaração ousada. Seu movimento de cronógrafo avançado oferece precisão impecável para o explorador urbano moderno.",
+        imageUrl: "https://i.imgur.com/ec9VMWt.png",
+      },
     ],
   },
   {
@@ -135,6 +142,13 @@ export const COLLECTIONS: Collection[] = [
         tagline: "A assinatura da elegância.",
         description: "Com sua simplicidade refinada e mostrador limpo, o Signum Tempus é a personificação do design clássico. Um relógio que não grita por atenção, mas a comanda sem esforço.",
         imageUrl: "https://i.imgur.com/meMcUvI.png",
+      },
+      {
+        id: 33,
+        name: "Opus Magnum",
+        tagline: "Uma obra-prima da relojoaria clássica.",
+        description: "O Opus Magnum é um tributo à era de ouro da relojoaria. Com seu mostrador intricadamente detalhado, numerais romanos clássicos e uma caixa de ouro polido, ele representa o auge do artesanato tradicional e do estilo atemporal.",
+        imageUrl: "https://i.imgur.com/9YrO4kU.png",
       },
     ]
   },
@@ -230,13 +244,6 @@ export const COLLECTIONS: Collection[] = [
         tagline: "Leveza e resiliência natural.",
         description: "A madeira de bordo, leve e resiliente, forma o corpo deste cronógrafo único, combinando uma estética natural com um design funcional.",
         imageUrl: "https://i.imgur.com/1JwE4zT.png",
-      },
-      {
-        id: 24,
-        name: "Petra Marblewood",
-        tagline: "A história da Terra no seu pulso.",
-        description: "Uma fusão de madeira terrosa e mármore frio e sólido. Cada mostrador é uma fatia única da história da Terra, tornando cada relógio irrepetível.",
-        imageUrl: "https://i.imgur.com/10UHLn1.png",
       },
       {
         id: 28,
