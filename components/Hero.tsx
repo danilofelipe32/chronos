@@ -34,10 +34,10 @@ const Hero: React.FC = () => {
       />
       <div className="absolute inset-0 bg-black opacity-60"></div>
       <div className="relative z-10 p-6 flex flex-col items-center">
-        <h1 className={`text-5xl md:text-7xl font-serif font-bold text-brand-gold drop-shadow-lg mb-4 transition-all duration-1000 ease-out ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+        <h1 className={`text-5xl sm:text-6xl md:text-7xl font-serif font-bold text-brand-gold drop-shadow-lg mb-4 transition-all duration-1000 ease-out ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           A Arte do Tempo
         </h1>
-        <p className={`text-lg md:text-xl max-w-2xl text-brand-light font-light transition-all duration-1000 ease-out delay-300 ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+        <p className={`text-base sm:text-lg md:text-xl max-w-2xl text-brand-light font-light transition-all duration-1000 ease-out delay-300 ${isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           Explorando os limites do design e da engenharia para criar relógios que transcendem o tempo.
         </p>
       </div>

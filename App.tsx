@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import WatchShowcase from './components/WatchShowcase';
+import About from './components/About';
 import Footer from './components/Footer';
 import { COLLECTIONS } from './constants';
 import type { Watch, Collection } from './types';
@@ -60,13 +61,14 @@ const App: React.FC = () => {
           activeFilter={activeFilter}
           onFilterChange={setActiveFilter}
         />
+        <About />
       </main>
       <Footer />
 
       <AnimatePresence>
         {selectedImage && (
           <motion.div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-[120] flex items-center justify-center bg-black/80 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

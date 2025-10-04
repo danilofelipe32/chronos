@@ -39,7 +39,7 @@ const CollectionSection: React.FC<CollectionSectionProps> = ({ collection, onSel
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h2 className="text-4xl font-serif font-bold text-center mb-2 text-brand-gold">
+        <h2 className="text-3xl sm:text-4xl font-serif font-bold text-center mb-2 text-brand-gold">
           {collection.name}
         </h2>
         <p className="text-center text-gray-400 mb-12 max-w-3xl mx-auto">

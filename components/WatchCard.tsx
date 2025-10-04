@@ -37,7 +37,7 @@ const WatchCard: React.FC<WatchCardProps> = ({ watch, onSelectImage, onEditWatch
       <div className="relative">
         <button
           onClick={() => onSelectImage(watch.imageUrl)}
-          className="block w-full h-96"
+          className="block w-full h-80 sm:h-96"
           aria-label={`View ${watch.name} in fullscreen`}
         >
           <img
